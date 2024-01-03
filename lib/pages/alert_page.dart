@@ -32,16 +32,23 @@ class _AlertPageState extends State<AlertPage> {
   Future<void> alerte() async{
     showDialog(
         context: context,
+        barrierDismissible: false,
         builder: (BuildContext contextDialog){
           return AlertDialog(
             title: Text("Erreur !!"),
             content: Text("Nous avons détecté un soucis"),
             actions: [
               TextButton(
-                  onPressed: null,
+                  onPressed: (){
+                    print("Annuler");
+                    Navigator.pop(contextDialog);
+                  },
                   child: Text("Annuler", style: TextStyle(color: Colors.red),)),
               TextButton(
-                  onPressed: null,
+                  onPressed: (){
+                    print("Validation");
+                    Navigator.pop(contextDialog);
+                  },
                   child: Text("Ok", style: TextStyle(color: Colors.blue),)),
             ],
           );
