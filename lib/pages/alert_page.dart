@@ -12,7 +12,7 @@ class _AlertPageState extends State<AlertPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: MyCustomBottomNavigation(),
+      bottomNavigationBar: MyCustomBottomNavigation(currentIndex: 0,),
       appBar: AppBar(
         title: Text("AlertPage"),
       ),

@@ -25,77 +25,89 @@ class _BottomPageState extends State<BottomPage> {
           children: [
             Text(choixTransport),
             FilledButton(
-                onPressed: (){
+                onPressed: () {
                   bottom();
+                },
+                child: Text("Afficher BottomSheet")),
+            FilledButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                child: Text("Retour arrière")),
+            FilledButton(
+                onPressed: () {
+                  Navigator.pushNamedAndRemoveUntil(context, "/alert", (route) {
+                    if(route.settings.name == "/snack"){
+                      return true;
+                    }
+                    return false;
+                  });
+                },
+                child: Text("RemoveUntil /snack")),
+            /*
+            FilledButton(
+                onPressed: (){
+                  Pages p = Pages.Alert;
+                  print(p.index);
                 },
                 child: Text("Afficher BottomSheet")
             ),
-            FilledButton(
-                onPressed: (){
-                  Navigator.pop(context);
-                },
-                child: Text("Retour arrière")
-            )
+
+             */
           ],
         ),
       ),
-      bottomNavigationBar: MyCustomBottomNavigation(),
+      bottomNavigationBar: MyCustomBottomNavigation(
+        currentIndex: 3,
+      ),
     );
   }
 
-  Future<void> bottom() async{
+  Future<void> bottom() async {
     showModalBottomSheet(
         context: context,
         isDismissible: false,
-        builder: (BuildContext contextDialog){
+        builder: (BuildContext contextDialog) {
           return Column(
             children: [
               Text("Veuillez choisir votre transport"),
               SimpleDialogOption(
-                onPressed: (){
+                onPressed: () {
                   setState(() {
                     choixTransport = "Voiture";
                     Navigator.pop(contextDialog);
                   });
                 },
                 child: Row(
-                  children: [
-                    Icon(Icons.directions_car),
-                    Text("Voiture")
-                  ],
+                  children: [Icon(Icons.directions_car), Text("Voiture")],
                 ),
               ),
               SimpleDialogOption(
-                onPressed: (){
+                onPressed: () {
                   setState(() {
                     choixTransport = "Bateau";
                     Navigator.pop(contextDialog);
                   });
                 },
                 child: Row(
-                  children: [
-                    Icon(Icons.directions_boat),
-                    Text("Bateau")
-                  ],
+                  children: [Icon(Icons.directions_boat), Text("Bateau")],
                 ),
               ),
               SimpleDialogOption(
-                onPressed: (){
+                onPressed: () {
                   setState(() {
                     choixTransport = "Avion";
                     Navigator.pop(contextDialog);
                   });
                 },
                 child: Row(
-                  children: [
-                    Icon(Icons.airplanemode_active),
-                    Text("Avion")
-                  ],
+                  children: [Icon(Icons.airplanemode_active), Text("Avion")],
                 ),
               ),
             ],
           );
-        }
-    );
+        });
   }
 }
+
+enum Pages { Simple, Bottom, Snack, Alert }

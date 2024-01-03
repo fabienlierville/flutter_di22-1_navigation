@@ -5,12 +5,13 @@ import 'package:navigation/pages/simple_page.dart';
 import 'package:navigation/pages/snack_page.dart';
 
 class MyCustomBottomNavigation extends StatelessWidget {
-  const MyCustomBottomNavigation({super.key});
-
+  MyCustomBottomNavigation({super.key,required this.currentIndex});
+  int currentIndex = 0;
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
       type: BottomNavigationBarType.fixed,
+      currentIndex: currentIndex,
       items: [
         BottomNavigationBarItem(icon: Icon(Icons.warning), label: "Alert"),
         BottomNavigationBarItem(icon: Icon(Icons.forward), label: "Simple"),

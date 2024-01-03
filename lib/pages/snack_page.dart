@@ -14,7 +14,7 @@ class _SnackPageState extends State<SnackPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: MyCustomBottomNavigation(),
+      bottomNavigationBar: MyCustomBottomNavigation(currentIndex: 2,),
       appBar: AppBar(
         title: Text("SnackPage"),
       ),

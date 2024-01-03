@@ -14,7 +14,7 @@ class _SimplePageState extends State<SimplePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: MyCustomBottomNavigation(),
+      bottomNavigationBar: MyCustomBottomNavigation(currentIndex: 1,),
       appBar: AppBar(
         title: Text("SimplePage"),
       ),
