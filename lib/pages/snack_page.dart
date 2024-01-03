@@ -18,7 +18,9 @@ class _SnackPageState extends State<SnackPage> {
         child: Column(
           children: [
             FilledButton(
-                onPressed: null,
+                onPressed: (){
+                  callSnack();
+                },
                 child: Text("Afficher SnackBar")
             )
           ],
@@ -26,4 +28,26 @@ class _SnackPageState extends State<SnackPage> {
       ),
     );
   }
+
+  void callSnack(){
+    //Conçoit le SnackBar
+    SnackBar snackBar = SnackBar(
+        content: Text("Message supprimé"),
+      duration: Duration(seconds: 5),
+      backgroundColor: Colors.red,
+      action: SnackBarAction(
+        label: "Annuler",
+        textColor: Colors.white,
+        onPressed: (){
+          print("Annuler suppression");
+          //Todo faire la récupération du mail
+        },
+      ),
+    );
+
+    // Lancement du SnackBar
+    ScaffoldMessenger.of(context).showSnackBar(snackBar);
+  }
+
+
 }
