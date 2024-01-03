@@ -29,6 +29,12 @@ class _BottomPageState extends State<BottomPage> {
                   bottom();
                 },
                 child: Text("Afficher BottomSheet")
+            ),
+            FilledButton(
+                onPressed: (){
+                  Navigator.pop(context);
+                },
+                child: Text("Retour arrière")
             )
           ],
         ),

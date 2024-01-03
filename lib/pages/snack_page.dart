@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:navigation/pages/bottom_page.dart';
 import 'package:navigation/widgets/my_custom_bottom_navigation.dart';
 
 class SnackPage extends StatefulWidget {
@@ -24,6 +25,17 @@ class _SnackPageState extends State<SnackPage> {
                   callSnack();
                 },
                 child: Text("Afficher SnackBar")
+            ),
+            FilledButton(
+                onPressed: (){
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context){
+                        return BottomPage();
+                      })
+                  );
+                },
+                child: Text("Aller vers Bottom Page")
             )
           ],
         ),
