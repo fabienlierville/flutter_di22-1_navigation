@@ -10,6 +10,20 @@ class SnackPage extends StatefulWidget {
 class _SnackPageState extends State<SnackPage> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("SnackPage"),
+      ),
+      body: Center(
+        child: Column(
+          children: [
+            FilledButton(
+                onPressed: null,
+                child: Text("Afficher SnackBar")
+            )
+          ],
+        ),
+      ),
+    );
   }
 }
