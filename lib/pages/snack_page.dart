@@ -38,6 +38,7 @@ class _SnackPageState extends State<SnackPage> {
       action: SnackBarAction(
         label: "Annuler",
         textColor: Colors.white,
+
         onPressed: (){
           print("Annuler suppression");
           //Todo faire la récupération du mail
