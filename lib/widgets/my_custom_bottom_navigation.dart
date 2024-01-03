@@ -20,36 +20,16 @@ class MyCustomBottomNavigation extends StatelessWidget {
       onTap: (int index){
         switch(index){
           case 0:
-            Navigator.push(
-                context,
-                MaterialPageRoute(builder: (BuildContext context){
-                  return AlertPage();
-                })
-            );
+            Navigator.pushNamed(context,"/alert");
             break;
           case 1:
-            Navigator.push(
-                context,
-                MaterialPageRoute(builder: (BuildContext context){
-                  return SimplePage();
-                })
-            );
+            Navigator.pushNamed(context,"/simple");
             break;
           case 2:
-            Navigator.push(
-                context,
-                MaterialPageRoute(builder: (BuildContext context){
-                  return SnackPage();
-                })
-            );
+            Navigator.pushNamed(context,"/snack");
             break;
           case 3:
-            Navigator.push(
-                context,
-                MaterialPageRoute(builder: (BuildContext context){
-                  return BottomPage();
-                })
-            );
+            Navigator.pushNamed(context,"/bottom");
             break;
         }
       },

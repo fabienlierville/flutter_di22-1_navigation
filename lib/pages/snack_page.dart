@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:navigation/pages/bottom_page.dart';
 import 'package:navigation/widgets/my_custom_bottom_navigation.dart';
@@ -36,7 +37,18 @@ class _SnackPageState extends State<SnackPage> {
                   );
                 },
                 child: Text("Aller vers Bottom Page")
-            )
+            ),
+            FilledButton(
+                onPressed: (){
+                  Navigator.pushReplacement(
+                      context,
+                      CupertinoPageRoute(builder: (context){
+                        return BottomPage();
+                      })
+                  );
+                },
+                child: Text("Aller vers Bottom Page")
+            ),
           ],
         ),
       ),

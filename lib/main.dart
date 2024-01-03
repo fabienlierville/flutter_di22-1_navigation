@@ -21,6 +21,12 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       home: BottomPage(),
+      routes: <String, WidgetBuilder>{
+        "/alert": (context) => AlertPage(),
+        "/simple": (context) => SimplePage(),
+        "/snack": (context) => SnackPage(),
+        "/bottom": (context) => BottomPage(),
+      },
     );
   }
 }
