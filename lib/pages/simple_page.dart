@@ -22,7 +22,7 @@ class _SimplePageState extends State<SimplePage> {
             Text(choixTransport),
             FilledButton(
                 onPressed: (){
-
+                  simple();
                 },
                 child: Text("Afficher SimpleDialog")
             )
@@ -39,7 +39,50 @@ class _SimplePageState extends State<SimplePage> {
         builder: (BuildContext contextDialog){
           return SimpleDialog(
             title: Text("Choisissez votre transport"),
-
+            children: [
+              SimpleDialogOption(
+                onPressed: (){
+                  setState(() {
+                    choixTransport = "Voiture";
+                    Navigator.pop(contextDialog);
+                  });
+                },
+                child: Row(
+                  children: [
+                    Icon(Icons.directions_car),
+                    Text("Voiture")
+                  ],
+                ),
+              ),
+              SimpleDialogOption(
+                onPressed: (){
+                  setState(() {
+                    choixTransport = "Bateau";
+                    Navigator.pop(contextDialog);
+                  });
+                },
+                child: Row(
+                  children: [
+                    Icon(Icons.directions_boat),
+                    Text("Bateau")
+                  ],
+                ),
+              ),
+              SimpleDialogOption(
+                onPressed: (){
+                  setState(() {
+                    choixTransport = "Avion";
+                    Navigator.pop(contextDialog);
+                  });
+                },
+                child: Row(
+                  children: [
+                    Icon(Icons.airplanemode_active),
+                    Text("Avion")
+                  ],
+                ),
+              ),
+            ],
           );
         }
     );
