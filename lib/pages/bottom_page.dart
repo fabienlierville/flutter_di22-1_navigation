@@ -29,6 +29,15 @@ class _BottomPageState extends State<BottomPage> {
           ],
         ),
       ),
+      bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
+        items: [
+          BottomNavigationBarItem(icon: Icon(Icons.warning), label: "Alert"),
+          BottomNavigationBarItem(icon: Icon(Icons.forward), label: "Simple"),
+          BottomNavigationBarItem(icon: Icon(Icons.favorite), label: "Snack"),
+          BottomNavigationBarItem(icon: Icon(Icons.arrow_downward), label: "Bottom"),
+        ],
+      ),
     );
   }
 
