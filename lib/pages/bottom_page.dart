@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:navigation/pages/alert_page.dart';
 
 class BottomPage extends StatefulWidget {
   const BottomPage({super.key});
@@ -37,6 +38,18 @@ class _BottomPageState extends State<BottomPage> {
           BottomNavigationBarItem(icon: Icon(Icons.favorite), label: "Snack"),
           BottomNavigationBarItem(icon: Icon(Icons.arrow_downward), label: "Bottom"),
         ],
+        onTap: (int index){
+          switch(index){
+            case 0:
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (BuildContext context){
+                    return AlertPage();
+                  })
+              );
+              break;
+          }
+        },
       ),
     );
   }
