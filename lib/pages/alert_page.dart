@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:navigation/widgets/my_custom_bottom_navigation.dart';
 
 class AlertPage extends StatefulWidget {
   const AlertPage({super.key});
@@ -11,6 +12,7 @@ class _AlertPageState extends State<AlertPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomNavigationBar: MyCustomBottomNavigation(),
       appBar: AppBar(
         title: Text("AlertPage"),
       ),

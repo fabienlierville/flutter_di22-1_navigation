@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:navigation/widgets/my_custom_bottom_navigation.dart';
 
 class SimplePage extends StatefulWidget {
   const SimplePage({super.key});
@@ -13,6 +14,7 @@ class _SimplePageState extends State<SimplePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomNavigationBar: MyCustomBottomNavigation(),
       appBar: AppBar(
         title: Text("SimplePage"),
       ),

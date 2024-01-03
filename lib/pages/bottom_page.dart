@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:navigation/pages/alert_page.dart';
 import 'package:navigation/pages/simple_page.dart';
 import 'package:navigation/pages/snack_page.dart';
+import 'package:navigation/widgets/my_custom_bottom_navigation.dart';
 
 class BottomPage extends StatefulWidget {
   const BottomPage({super.key});
@@ -32,51 +33,7 @@ class _BottomPageState extends State<BottomPage> {
           ],
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed,
-        items: [
-          BottomNavigationBarItem(icon: Icon(Icons.warning), label: "Alert"),
-          BottomNavigationBarItem(icon: Icon(Icons.forward), label: "Simple"),
-          BottomNavigationBarItem(icon: Icon(Icons.favorite), label: "Snack"),
-          BottomNavigationBarItem(icon: Icon(Icons.arrow_downward), label: "Bottom"),
-        ],
-        onTap: (int index){
-          switch(index){
-            case 0:
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (BuildContext context){
-                    return AlertPage();
-                  })
-              );
-              break;
-            case 1:
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (BuildContext context){
-                    return SimplePage();
-                  })
-              );
-              break;
-            case 2:
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (BuildContext context){
-                    return SnackPage();
-                  })
-              );
-              break;
-            case 3:
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (BuildContext context){
-                    return BottomPage();
-                  })
-              );
-              break;
-          }
-        },
-      ),
+      bottomNavigationBar: MyCustomBottomNavigation(),
     );
   }
 

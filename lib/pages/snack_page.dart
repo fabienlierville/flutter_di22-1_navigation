@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:navigation/widgets/my_custom_bottom_navigation.dart';
 
 class SnackPage extends StatefulWidget {
   const SnackPage({super.key});
@@ -11,6 +12,7 @@ class _SnackPageState extends State<SnackPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomNavigationBar: MyCustomBottomNavigation(),
       appBar: AppBar(
         title: Text("SnackPage"),
       ),
