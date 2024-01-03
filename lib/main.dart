@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:navigation/pages/alert_page.dart';
+import 'package:navigation/pages/bottom_page.dart';
 import 'package:navigation/pages/simple_page.dart';
 import 'package:navigation/pages/snack_page.dart';
 
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: SimplePage(),
+      home: BottomPage(),
     );
   }
 }
