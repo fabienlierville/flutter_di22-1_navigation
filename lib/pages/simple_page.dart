@@ -8,6 +8,8 @@ class SimplePage extends StatefulWidget {
 }
 
 class _SimplePageState extends State<SimplePage> {
+  String choixTransport = "Aucun Choix";
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,6 +19,7 @@ class _SimplePageState extends State<SimplePage> {
       body: Center(
         child: Column(
           children: [
+            Text(choixTransport),
             FilledButton(
                 onPressed: (){
 
@@ -26,6 +29,19 @@ class _SimplePageState extends State<SimplePage> {
           ],
         ),
       ),
+    );
+  }
+
+  Future<void> simple() async{
+    showDialog(
+        context: context,
+        barrierDismissible: false,
+        builder: (BuildContext contextDialog){
+          return SimpleDialog(
+            title: Text("Choisissez votre transport"),
+
+          );
+        }
     );
   }
 }
